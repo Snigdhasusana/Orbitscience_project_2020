@@ -68,8 +68,8 @@ public class VerifyHomepage extends WebLibrary {
 	bStatus = ClickElement("//a[@class='nav-link']/following::li/a[text()='Contact Us']");
 		Reporter.log(bStatus, "contact us tab is  clicked", "contact us tab is not clicked");
 			
-		
-	
+	}
+
+
+  
 }
-}
-		

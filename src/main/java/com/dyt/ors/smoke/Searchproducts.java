@@ -16,7 +16,7 @@ public class Searchproducts extends WebLibrary {
 	
 	
 	
-	@FindBy(xpath="//a[text()='Product name']")
+	@FindBy(xpath="//a[text()='chemical']")
 	public static WebElement linkproductname;
 
 //==================================

@@ -13,9 +13,10 @@ import com.dyt.ors.screenpages.Home;
 import com.dyt.ors.screenpages.Login;
 import com.dyt.ors.screenpages.MainCategories;
 import com.dyt.ors.screenpages.Subcategory;
+import com.dyt.utilities.ExcelLib;
 
 public class AdminProducts extends BaseClass {
-	
+	/*
 	@Test
 	public static void TC001_verifymainmenu() {
 		VerifyHomepage verifyhomepage= PageFactory.initElements(driver, VerifyHomepage.class);
@@ -24,7 +25,38 @@ public class AdminProducts extends BaseClass {
 		
 	}
 	
+	
+	@Test
+	public static void TC002_Verifylogin()
+	{		
+		
+		Home home = PageFactory.initElements(driver, Home.class);
+		
+		VerifyLoginpage verifyLoginpage = PageFactory.initElements(driver, VerifyLoginpage.class);
+		
+		
+		Home.navLoginpage();
+		
+		VerifyLoginpage.loginpage("admin","admin");
+		
 	}
+	*/
+	
+	@Test
+	public static void TC003_Login()
+	{	
+		String[] data = ExcelLib.getRowData("TC003_Login", Regression_Sheet);
+		Login login = PageFactory.initElements(driver, Login.class);
+		Home home = PageFactory.initElements(driver, Home.class);
+		
+		Home.navLoginpage();
+		
+		login.loginApp(data[0],data[1]);
+	}
+	
+	
+	}
+
 	
 	
 /*

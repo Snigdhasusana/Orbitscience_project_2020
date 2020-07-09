@@ -1,14 +1,14 @@
-package com.dyt.ors.screenpages;
+package com.dyt.ors.regression;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 import com.dyt.generic.WebLibrary;
 import com.dyt.reports.Reporter;
 
-public class Login extends WebLibrary{	
+public class VerifyLoginpage extends WebLibrary {
 	
-	//=========WebElements for Login page==================
 	@FindBy(xpath="//input[@name='loginId']")
 	public static WebElement edit_UserName;	
 	
@@ -18,13 +18,9 @@ public class Login extends WebLibrary{
 	@FindBy(xpath="//input[@type='submit']")
 	public static WebElement btn_Login;	
 	
-	@FindBy(xpath="//span[text()='Welcome, Admin']")
-	public static WebElement Weclome_link;	
-	
-	
 	//=================Login methods=========================
 	
-	public static void loginApp(String user, String password) {			
+	public static void loginpage(String user, String password) {			
 		
 		boolean bStatus;		
 		bStatus = setEditValue(edit_UserName, user);
@@ -35,5 +31,16 @@ public class Login extends WebLibrary{
 		
 		bStatus = clickElement(btn_Login);
 		Reporter.log(bStatus, "Login button clicked", "Login button not clicked");
+		
+		if(Exist("//span[text()='Invalid Creditionals.Please Try Again']")) {
+			Reporter.log(bStatus, "error message displayed ", "error message not displayed");
 	}
+	
 }
+}
+	
+			   
+		   
+		
+			
+	

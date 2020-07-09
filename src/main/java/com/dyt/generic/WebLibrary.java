@@ -461,6 +461,28 @@ public class WebLibrary extends Config {
         return stepStatus;
     }
 	
+	//===================================================================================
+	
+	public static Boolean OpenUrl(String URL)
+    {
+    	Boolean stepStatus = true;
+    	try
+    	{
+    		driver.get(URL);
+    		driver.manage().window().maximize();
+    	}
+    	catch(Exception e)
+    	{
+    		stepStatus = false;
+    	}
+    	String CurrentUrl = driver.getCurrentUrl();
+    	if (!CurrentUrl.contains(URL))
+    	{
+    		stepStatus = false;
+    	}
+    	return stepStatus;
+    }
+	
 	//========================End WebLibrary========================================
 	
 }
