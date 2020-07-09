@@ -8,7 +8,7 @@ import com.dyt.reports.Reporter;
 
 public class VerifyHomepage extends WebLibrary {
 	
-	public static void Mainmenu() {
+	public static void Mainmenu()   {
 		boolean bStatus;
 		
 		bStatus = ClickElement("//a[@class='nav-link']");
@@ -26,26 +26,36 @@ public class VerifyHomepage extends WebLibrary {
 				Reporter.log(bStatus, "products is Exists", "products is not Exists");
 				
 			}
-				if(Exist("//a[text()='COA']")) {
-					Reporter.log(bStatus, "COA is Exists", "COA is not Exists"); 
+			if(Exist("//a[text()='COA']")) {
+				Reporter.log(bStatus, "COA is Exists", "COA is not Exists"); 
 				}
-				if(Exist("//a[text()='Literatures']")) {
-					Reporter.log(bStatus, "Literatures is Exists", "Literatures is not Exists");
+			if(Exist("//a[text()='Literatures']")) {
+				Reporter.log(bStatus, "Literatures is Exists", "Literatures is not Exists");
 					
 				}
-					if( Exist("//a[@class='nav-link']/following::li/a[text()='Contact Us']"))
-					 {
-				System.out.println("all the tabs are available");
+			if( Exist("//a[@class='nav-link']/following::li/a[text()='Contact Us']"))
+				{
+								
+			Reporter.log(bStatus, "Contact Us tabs are clicked", "Contact Us  tabs are not clicked");
+			     }
 				
-				Reporter.log(bStatus, "Contact Us tabs are clicked", "Contact Us  tabs are not clicked");
+			if(Exist("//a[text()='Login']") ) {
+			Reporter.log(bStatus, "login link Exists", "login link  is not Exists");
 			}
-				
-					if(Exist("//a[text()='Login']") ) {
-						Reporter.log(bStatus, "login link Exists", "login link  is not Exists");
-					}
+			if(Exist("//a[text()= ='Register']") ) {
+				Reporter.log(bStatus, "register link Exists", "register link  is not Exists");
+				}
 	}
-	}
-
-}
+	
+     
+	bStatus = ClickElement("//li[@class='nav-item']");
+	Reporter.log(bStatus, "About orbit tab clicked", "About orbit tab not  clicked");
+	if(Exist("//input[@name='searchRecord']")&&Exist("//i[@class='fa fa-search']")) {
+	Reporter.log(bStatus, "search bar is available", "search bar is  not available");
 		
+	}
+	
+	
+}
+}
 		
