@@ -55,6 +55,20 @@ public class VerifyHomepage extends WebLibrary {
 		
 	}
 	
+	bStatus = ClickElement("//a[text()='Products']");
+	Reporter.log(bStatus, "product tab clicked", "product tab not  clicked");
+	
+	bStatus = ClickElement("//a[text()='COA']");
+	Reporter.log(bStatus, "COA tab clicked", "COA tab not  clicked");
+	
+	bStatus = ClickElement("//a[text()='Literatures']");
+	Reporter.log(bStatus, "literature tab clicked", "literature tab not  clicked");
+	
+	
+	bStatus = ClickElement("//a[@class='nav-link']/following::li/a[text()='Contact Us']");
+		Reporter.log(bStatus, "contact us tab is  clicked", "contact us tab is not clicked");
+			
+		
 	
 }
 }
