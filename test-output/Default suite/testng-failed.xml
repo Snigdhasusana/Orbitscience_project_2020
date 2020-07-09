@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
+  <test thread-count="5" name="Default test(failed)">
+    <classes>
+<<<<<<< HEAD
+      <class name="com.dyt.ors.smoke.Verify">
+=======
+      <class name="com.dyt.ors.regression.AdminProducts">
+>>>>>>> branch 'master' of https://github.com/Developyoutechnologies/Automation_2020.git
+        <methods>
+<<<<<<< HEAD
+          <include name="TC004_addMainCategory"/>
+=======
+          <include name="TC002_addSubCategory"/>
+>>>>>>> branch 'master' of https://github.com/Developyoutechnologies/Automation_2020.git
+          <include name="setupReport"/>
+          <include name="flushReportAndOpen"/>
+          <include name="TC001_addMainCategory"/>
+          <include name="closeBrowser"/>
+          <include name="TC004_EditProductDetails"/>
+          <include name="TC003_addProduct"/>
+          <include name="launchBrowser"/>
+        </methods>
+<<<<<<< HEAD
+      </class> <!-- com.dyt.ors.smoke.Verify -->
+=======
+      </class> <!-- com.dyt.ors.regression.AdminProducts -->
+>>>>>>> branch 'master' of https://github.com/Developyoutechnologies/Automation_2020.git
+    </classes>
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->
