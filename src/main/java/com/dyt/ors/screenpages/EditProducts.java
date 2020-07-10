@@ -1,5 +1,8 @@
 package com.dyt.ors.screenpages;
 
+import java.util.List;
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -7,14 +10,7 @@ import com.dyt.generic.WebLibrary;
 import com.dyt.reports.Reporter;
 
 public class EditProducts extends WebLibrary {
-	@FindBy(xpath="//a[text()='Products']")
-	public static WebElement link_Products;
 	
-	@FindBy(xpath="//table[@id='dataTable']/tbody/tr[8]/td[15]/a[1]/i")
-	public static WebElement clickediticon;
-	
-	
-
 	@FindBy(xpath="//select[@id='ors_mc_id']")
 	public static WebElement Select_MainCatergories;		
 	
@@ -63,19 +59,36 @@ public class EditProducts extends WebLibrary {
 	
 	//================================================================================
 	
-	public static void  editproduct(String MainCatergories,String  OrderValue, String CatNo, String ProductDescription,String EnterMake, String Prize,String ProductGrade,
+	public static boolean selectproductEditicon(String expValue) {
+		boolean bStatus = false;
+		try {
+		List<WebElement> rows = driver.findElements(By.xpath("//table[@id='dataTable']/tbody/tr"));
+		int trcount=rows.size();
+		//System.out.println(trcount);
+		
+		for(int i=1; i<=trcount; i++) {
+		String actValue=driver.findElement(By.xpath("//table[@id='dataTable']/tbody/tr["+i+"]/td[6]")).getText();
+		System.out.println(actValue);
+		if ((actValue.equals(expValue)))  {
+			driver.findElement(By.xpath("//table[@id='dataTable']/tbody/tr["+i+"]/td[15]/a[1]/i")).click();
+			break;
+			}
+		}
+		}
+		
+		catch(Exception e) {
+			bStatus = false;
+		}
+		return bStatus;
+		
+		
+	}
+	//===============================================================================
+	public static void  editproduct(String CatNo, String ProductDescription,String EnterMake, String Prize,String ProductGrade,
             String Synonyms, String CasNo , String EnterPacSize, String Available,String HSCode , String Assignedorder , String ProductImage) {
 		boolean bStatus;
 		
-	bStatus = clickElement(clickediticon);
-	Reporter.log(bStatus, "edit icon clicked", "edit icon  not clicked");
-		
-	bStatus = setEditValue(Select_MainCatergories,MainCatergories);
-	Reporter.log(bStatus, "Main category Value entered", "Main category Value not entered");
-	
-	bStatus = setEditValue(Select_SubCategories,OrderValue);
-	Reporter.log(bStatus, "SubCategories Value Selected", "SubCategories Value not Selected");
-	
+		 	
 	bStatus = setValueEscape(enter_CatNo, CatNo);
 	Reporter.log(bStatus, "CatNo is entered", "CatNo is not entered");
 	
@@ -117,4 +130,47 @@ public class EditProducts extends WebLibrary {
 	Reporter.log(bStatus, "submit button clicked", "submit button not clicked");
 
 	}
+	//=================================================================================
+	public static void VerifyeditProduct() {
+		
+		int rowCount = driver.findElements(By.xpath("//table[@id='dataTable']/tbody/tr")).size();
+		boolean bTag = false;
+		String nextButtonClassName;
+               //using next button 
+		while (rowCount != 0) {
+			nextButtonClassName = driver.findElement(By.id("dataTable_next")).getAttribute("class");
+			for (int i = 1; i <= rowCount; i++) {
+				String catText = driver.findElement(By.xpath("//table[@id='dataTable']/tbody/tr[" + i + "]/td[6]"))	.getText();
+				if (catText.trim().equalsIgnoreCase("1234")) {
+					bTag = true;
+					break;
+				} 
+
+			} 
+
+			if (bTag == false) {
+				if (nextButtonClassName.contains("disabled")) {
+					break;
+				} else {
+
+					// click on next button
+					driver.findElement(By.xpath("//li[@id='dataTable_next']")).click();
+					// again count the no. of rows
+					rowCount = driver.findElements(By.xpath("//table[@id='dataTable']/tbody/tr")).size();
+				}
+
+			} else {
+				break;
+			}
+
+		} 
+
+		if (bTag == true)
+			System.out.println("Result displayed in result table");
+		else
+			System.out.println("No result displayed in result table");
+
+	}
+		  
 }
+

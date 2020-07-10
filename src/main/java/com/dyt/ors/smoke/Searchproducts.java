@@ -16,8 +16,6 @@ public class Searchproducts extends WebLibrary {
 	
 	
 	
-	@FindBy(xpath="//a[text()='chemical']")
-	public static WebElement linkproductname;
 
 //==================================
 
@@ -33,8 +31,6 @@ boolean bStatus;
 	bStatus = clickElement(clicksearchicon);
 	Reporter.log(bStatus, "searchicon clicked", "searchicon not clicked");
 	
-	bStatus = clickElement(linkproductname);
-	Reporter.log(bStatus, "product link is clicked", "productlink is  not clicked");
 	
 	
 }

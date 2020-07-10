@@ -30,7 +30,7 @@ public class VerifySubcategory extends WebLibrary{
 		
 		bStatus = ClickElement("//input[@type='submit']");
 				
-		bStatus = checkAlert_Accept("ok");
+		bStatus = checkAlert_Accept("OK");
 		Reporter.log(bStatus,"Alert message is displayed","Alert message is not displayed");
 		
 	}

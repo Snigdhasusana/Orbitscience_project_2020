@@ -57,7 +57,7 @@ public class AdminProducts extends BaseClass {
 	
 	}
 
-	*/
+	
 	
 	
 
@@ -133,37 +133,45 @@ public class AdminProducts extends BaseClass {
 	}
 }
 	//=============================================
+	  */
+	
 	
 	@Test
 	public static void TC003_addProduct()
 	{		
-		
+		String[] data = ExcelLib.getRowData("TC003_addProduct", Regression_Sheet);
 		Login login = PageFactory.initElements(driver, Login.class);
 		Home home = PageFactory.initElements(driver, Home.class);
 		Dashboard dashboard = PageFactory.initElements(driver, Dashboard.class);
-		AddProducts navAddProducts = PageFactory.initElements(driver, AddProducts.class);
-		
+		//AddProducts navAddProducts = PageFactory.initElements(driver, AddProducts.class);
+		//VerifyProducts VerifyaddProducts = PageFactory.initElements(driver, VerifyProducts.class);
+		VerifyDeleteProducts selectproductDeleteicon= PageFactory.initElements(driver, VerifyDeleteProducts.class);
 		//Step 1: Login as an admin
 		
 				Home.navLoginpage();
-				login.loginApp("admin","admin@123");
+				login.loginApp(data[0],data[1]);
 				
 				//Step 2: navigate to Product page
 				
 				dashboard.navProducts();
+				//VerifyProducts.VerifyaddProducts();
+				
+				VerifyDeleteProducts.selectproductDeleteicon(data[4]);
+				VerifyDeleteProducts.Alertanddismiss();
 				
 				// step 3 add products
 				
-				AddProducts.addProducts("dolofar","tab-25" ,"1567", "pain relief", "22", "1000", "B", "pain killer", "1","4321", "100","5432","G", "ProductImage");
+				//AddProducts.addProducts("dolofar","tab-25" ,"1567", "pain relief", "22", "1000", "B", "pain killer", "1","4321", "100","5432","G", "ProductImage");
 				
 				
 		
 		
 		
 	}
+}
 
 	//=============================================
-	
+	/*
 	@Test
 	public static void TC004_EditProductDetails()
 	{

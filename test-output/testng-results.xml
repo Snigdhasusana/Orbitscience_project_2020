@@ -2,35 +2,35 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="38656" started-at="2020-07-10T13:14:53Z" finished-at="2020-07-10T13:15:32Z">
+  <suite name="Default suite" duration-ms="53333" started-at="2020-07-10T13:45:19Z" finished-at="2020-07-10T13:46:13Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="38656" started-at="2020-07-10T13:14:53Z" finished-at="2020-07-10T13:15:32Z">
+    <test name="Default test" duration-ms="53333" started-at="2020-07-10T13:45:19Z" finished-at="2020-07-10T13:46:13Z">
       <class name="com.dyt.ors.regression.AdminProducts">
-        <test-method status="PASS" signature="setupReport()[pri:0, instance:com.dyt.ors.regression.AdminProducts@3ffc5af1]" name="setupReport" is-config="true" duration-ms="797" started-at="2020-07-10T18:44:52Z" finished-at="2020-07-10T18:44:53Z">
+        <test-method status="PASS" signature="setupReport()[pri:0, instance:com.dyt.ors.regression.AdminProducts@3ffc5af1]" name="setupReport" is-config="true" duration-ms="906" started-at="2020-07-10T19:15:18Z" finished-at="2020-07-10T19:15:19Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setupReport -->
-        <test-method status="PASS" signature="launchBrowser(java.lang.reflect.Method)[pri:0, instance:com.dyt.ors.regression.AdminProducts@3ffc5af1]" name="launchBrowser" is-config="true" duration-ms="12998" started-at="2020-07-10T18:44:53Z" finished-at="2020-07-10T18:45:06Z">
+        <test-method status="PASS" signature="launchBrowser(java.lang.reflect.Method)[pri:0, instance:com.dyt.ors.regression.AdminProducts@3ffc5af1]" name="launchBrowser" is-config="true" duration-ms="14151" started-at="2020-07-10T19:15:19Z" finished-at="2020-07-10T19:15:34Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[public static void com.dyt.ors.regression.AdminProducts.TC001_addMainCategory()]]>
+                <![CDATA[public static void com.dyt.ors.regression.AdminProducts.TC003_addProduct()]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchBrowser -->
-        <test-method status="PASS" signature="TC001_addMainCategory()[pri:0, instance:com.dyt.ors.regression.AdminProducts@3ffc5af1]" name="TC001_addMainCategory" duration-ms="25140" started-at="2020-07-10T18:45:06Z" finished-at="2020-07-10T18:45:31Z">
+        <test-method status="PASS" signature="TC003_addProduct()[pri:0, instance:com.dyt.ors.regression.AdminProducts@3ffc5af1]" name="TC003_addProduct" duration-ms="34775" started-at="2020-07-10T19:15:34Z" finished-at="2020-07-10T19:16:08Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TC001_addMainCategory -->
-        <test-method status="PASS" signature="closeBrowser()[pri:0, instance:com.dyt.ors.regression.AdminProducts@3ffc5af1]" name="closeBrowser" is-config="true" duration-ms="460" started-at="2020-07-10T18:45:31Z" finished-at="2020-07-10T18:45:32Z">
+        </test-method> <!-- TC003_addProduct -->
+        <test-method status="PASS" signature="closeBrowser()[pri:0, instance:com.dyt.ors.regression.AdminProducts@3ffc5af1]" name="closeBrowser" is-config="true" duration-ms="4316" started-at="2020-07-10T19:16:08Z" finished-at="2020-07-10T19:16:13Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
-        <test-method status="PASS" signature="flushReportAndOpen()[pri:0, instance:com.dyt.ors.regression.AdminProducts@3ffc5af1]" name="flushReportAndOpen" is-config="true" duration-ms="13559" started-at="2020-07-10T18:45:32Z" finished-at="2020-07-10T18:45:46Z">
+        <test-method status="PASS" signature="flushReportAndOpen()[pri:0, instance:com.dyt.ors.regression.AdminProducts@3ffc5af1]" name="flushReportAndOpen" is-config="true" duration-ms="15300" started-at="2020-07-10T19:16:13Z" finished-at="2020-07-10T19:16:28Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- flushReportAndOpen -->

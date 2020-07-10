@@ -3,15 +3,15 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.dyt.ors.regression.AdminProducts">
+      <class name="com.dyt.ors.smoke.Verify">
         <methods>
           <include name="setupReport"/>
+          <include name="TC008_AddProducts"/>
           <include name="flushReportAndOpen"/>
-          <include name="TC001_addMainCategory"/>
           <include name="closeBrowser"/>
           <include name="launchBrowser"/>
         </methods>
-      </class> <!-- com.dyt.ors.regression.AdminProducts -->
+      </class> <!-- com.dyt.ors.smoke.Verify -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

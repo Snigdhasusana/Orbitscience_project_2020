@@ -16,33 +16,6 @@ import com.dyt.utilities.ExcelLib;
 
 public class Verify extends BaseClass{
 	
-	@Test
-	public static void TC001_navVerifyHomePage()
-	{		
-		
-		Home home = PageFactory.initElements(driver, Home.class);
-		HomePage homepage = PageFactory.initElements(driver, HomePage.class);
-		
-		//Step 1: home page	
-		homepage.navVerifyHomePage();
-	}
-
-	
-	//================================================
-	
-	@Test
-	public static void TC003_VerifyHomePage()
-	{		
-		
-		Home home = PageFactory.initElements(driver, Home.class);
-		HomePage homepage = PageFactory.initElements(driver, HomePage.class);
-		
-		//Step 1: home page	
-		homepage.navVerifyHomePage();
-	}
-
-	
-	//================================================
 	
 	
 	@Test
