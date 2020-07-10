@@ -57,39 +57,47 @@ public class AdminProducts extends BaseClass {
 	
 	}
 
+	*/
 	
 	
 
 	@Test
 	public static void TC001_addMainCategory()
 	{		
+		String[] data = ExcelLib.getRowData("TC001_addMainCategory", Regression_Sheet);
 		Login login = PageFactory.initElements(driver, Login.class);
 		Home home = PageFactory.initElements(driver, Home.class);
 		Dashboard dashboard = PageFactory.initElements(driver, Dashboard.class);
-		MainCategories AddMainCategories=PageFactory.initElements(driver,MainCategories.class);
-		Editmaincategories editmaincategory = PageFactory.initElements(driver,Editmaincategories.class);
+		//MainCategories AddMainCategories=PageFactory.initElements(driver,MainCategories.class);
+		//Editmaincategories editmaincategory = PageFactory.initElements(driver,Editmaincategories.class);
+		 VerifyDeletemaincategory selectmaincategoryDeleteicon = PageFactory.initElements(driver,VerifyDeletemaincategory.class);
 		
 		
 		//Step 1: Login as an admin
 		
 		Home.navLoginpage();
 		
-		login.loginApp("admin","admin@123");
+		login.loginApp(data[0],data[1]);
 		
 		//Step 2: Navigate to Main Category page
 		
 		 dashboard.navMainCategories();
 		
-		 MainCategories.AddMainCategories("cold", "D","value");
-		Editmaincategories.editmaincategories("cold Act","Z","value");
+		 //MainCategories.AddMainCategories("cold", "D","value");
+		 //Editmaincategories.selectmaincategoryEditicon(data[2]);
+		//Editmaincategories.editmaincategories(data[3],data[4],data[5]);
+		 VerifyDeletemaincategory.selectmaincategoryDeleteicon(data[3]);
+		 VerifyDeletemaincategory.Alertanddismiss();
+		 
 		
 		
 		
 		// Step n : Logout		
 	}
-	*/
+}
 	
 	//=============================================
+	/*
 
 	@Test
 	public static void TC004_addSubCategory()
@@ -125,7 +133,7 @@ public class AdminProducts extends BaseClass {
 	}
 }
 	//=============================================
-	/*
+	
 	@Test
 	public static void TC003_addProduct()
 	{		

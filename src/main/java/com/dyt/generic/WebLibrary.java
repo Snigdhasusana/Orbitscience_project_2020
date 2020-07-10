@@ -488,7 +488,7 @@ public class WebLibrary extends Config {
 	
 	public static boolean checkAlert_Accept(String string) {
 		
-	
+		
         try {
         Alert a = driver.switchTo().alert();
         String str = a.getText();

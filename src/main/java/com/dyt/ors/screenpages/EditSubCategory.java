@@ -36,7 +36,7 @@ public class EditSubCategory extends WebLibrary{
 		//System.out.println(trcount);
 		
 		for(int i=1; i<=trcount; i++) {
-		String actValue=driver.findElement(By.xpath("//table[@id='dataTable']/tbody/tr["+i+"]/td[2]")).getText();
+		String actValue=driver.findElement(By.xpath("//table[@id='dataTable']/tbody/tr["+i+"]/td[3]")).getText();
 		System.out.println(actValue);
 		if ((actValue.equals(expValue)))  {
 			driver.findElement(By.xpath("//table[@id='dataTable']/tbody/tr["+i+"]/td[5]/a[1]/i")).click();
@@ -53,31 +53,7 @@ public class EditSubCategory extends WebLibrary{
 		
 	}
 	
-	//===================================================================================================
-	public static boolean selectDeleteicon(String expValue) {
-		boolean bStatus = false;
-		try {
-		List<WebElement> rows = driver.findElements(By.xpath("//table[@id='dataTable']/tbody/tr"));
-		int trcount=rows.size();
-		//System.out.println(trcount);
 		
-		for(int i=1; i<=trcount; i++) {
-		String actValue=driver.findElement(By.xpath("//table[@id='dataTable']/tbody/tr["+i+"]/td[2]")).getText();
-		System.out.println(actValue);
-		if ((actValue.equals(expValue)))  {
-			driver.findElement(By.xpath("//table[@id='dataTable']/tbody/tr["+i+"]/td[5]/a[2]/i")).click();
-			break;
-			}
-		}
-		}
-		
-		catch(Exception e) {
-			bStatus = false;
-		}
-		return bStatus;
-		}
-	
-	
 	//===================================================================================================
 	public static void editsubcategory(String MainCategory, String SubCategory, String AssignedOrder) {
 		boolean bStatus;

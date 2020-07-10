@@ -21,9 +21,8 @@ public class VerifyDeleteSubcategory extends WebLibrary{
 			
 			for(int i=1; i<=trcount; i++) {
 			String actValue=driver.findElement(By.xpath("//table[@id='dataTable']/tbody/tr["+i+"]/td[3]")).getText();
-			System.out.println(actValue);
 			if ((actValue.equals(expValue)))  {
-				driver.findElement(By.xpath("//table[@id='dataTable']/tbody/tr["+i+"]/td[5]/a[2]/i")).click();
+			driver.findElement(By.xpath("//table[@id='dataTable']/tbody/tr["+i+"]/td[5]/a[2]/i")).click();
 				break;
 				}
 			}
@@ -39,10 +38,10 @@ public class VerifyDeleteSubcategory extends WebLibrary{
 
    public static void Alertanddismiss() {
 	   boolean bStatus;
-	   //bStatus = checkAlert_Accept("ok");
-	//	Reporter.log(bStatus,"Alert message is displayed","Alert message is not displayed");
-		bStatus = checkAlert_Dismiss("Cancel");
+	    bStatus = checkAlert_Accept("ok");
 		Reporter.log(bStatus,"Alert message is displayed","Alert message is not displayed");
+		//bStatus = checkAlert_Dismiss("Cancel");
+		//Reporter.log(bStatus,"Alert message is displayed","Alert message is not displayed");
 		
 	   
    }

@@ -6,8 +6,8 @@
       <class name="com.dyt.ors.regression.AdminProducts">
         <methods>
           <include name="setupReport"/>
-          <include name="TC004_addSubCategory"/>
           <include name="flushReportAndOpen"/>
+          <include name="TC001_addMainCategory"/>
           <include name="closeBrowser"/>
           <include name="launchBrowser"/>
         </methods>
