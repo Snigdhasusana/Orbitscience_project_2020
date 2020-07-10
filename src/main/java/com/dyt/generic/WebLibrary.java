@@ -499,10 +499,25 @@ public class WebLibrary extends Config {
         } catch (Exception e) {
 
         return false;
-      }
+        }
+	}
+  //=================================================================================
+        
+	public static boolean checkAlert_Dismiss(String string) {
+		try {
+		Alert a = driver.switchTo().alert();
+		String str = a.getText();
+		System.out.println(str);
 
+		a.dismiss();
+		return true;
+
+		} catch (Exception e) {
+			return false;
+		}
+	}
 	
 	//========================End WebLibrary========================================
 	
 }
-}
+

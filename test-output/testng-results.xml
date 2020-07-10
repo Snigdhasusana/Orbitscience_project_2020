@@ -2,16 +2,16 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="57663" started-at="2020-07-10T08:35:56Z" finished-at="2020-07-10T08:36:54Z">
+  <suite name="Default suite" duration-ms="35427" started-at="2020-07-10T11:03:00Z" finished-at="2020-07-10T11:03:36Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="57663" started-at="2020-07-10T08:35:56Z" finished-at="2020-07-10T08:36:54Z">
+    <test name="Default test" duration-ms="35427" started-at="2020-07-10T11:03:00Z" finished-at="2020-07-10T11:03:36Z">
       <class name="com.dyt.ors.regression.AdminProducts">
-        <test-method status="PASS" signature="setupReport()[pri:0, instance:com.dyt.ors.regression.AdminProducts@3ffc5af1]" name="setupReport" is-config="true" duration-ms="378" started-at="2020-07-10T14:05:56Z" finished-at="2020-07-10T14:05:56Z">
+        <test-method status="PASS" signature="setupReport()[pri:0, instance:com.dyt.ors.regression.AdminProducts@3ffc5af1]" name="setupReport" is-config="true" duration-ms="405" started-at="2020-07-10T16:33:00Z" finished-at="2020-07-10T16:33:00Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setupReport -->
-        <test-method status="PASS" signature="launchBrowser(java.lang.reflect.Method)[pri:0, instance:com.dyt.ors.regression.AdminProducts@3ffc5af1]" name="launchBrowser" is-config="true" duration-ms="19340" started-at="2020-07-10T14:05:56Z" finished-at="2020-07-10T14:06:16Z">
+        <test-method status="PASS" signature="launchBrowser(java.lang.reflect.Method)[pri:0, instance:com.dyt.ors.regression.AdminProducts@3ffc5af1]" name="launchBrowser" is-config="true" duration-ms="14705" started-at="2020-07-10T16:33:00Z" finished-at="2020-07-10T16:33:15Z">
           <params>
             <param index="0">
               <value>
@@ -22,15 +22,15 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchBrowser -->
-        <test-method status="PASS" signature="TC004_addSubCategory()[pri:0, instance:com.dyt.ors.regression.AdminProducts@3ffc5af1]" name="TC004_addSubCategory" duration-ms="38052" started-at="2020-07-10T14:06:16Z" finished-at="2020-07-10T14:06:54Z">
+        <test-method status="PASS" signature="TC004_addSubCategory()[pri:0, instance:com.dyt.ors.regression.AdminProducts@3ffc5af1]" name="TC004_addSubCategory" duration-ms="20475" started-at="2020-07-10T16:33:15Z" finished-at="2020-07-10T16:33:36Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TC004_addSubCategory -->
-        <test-method status="PASS" signature="closeBrowser()[pri:0, instance:com.dyt.ors.regression.AdminProducts@3ffc5af1]" name="closeBrowser" is-config="true" duration-ms="231" started-at="2020-07-10T14:06:54Z" finished-at="2020-07-10T14:06:54Z">
+        <test-method status="PASS" signature="closeBrowser()[pri:0, instance:com.dyt.ors.regression.AdminProducts@3ffc5af1]" name="closeBrowser" is-config="true" duration-ms="209" started-at="2020-07-10T16:33:36Z" finished-at="2020-07-10T16:33:36Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
-        <test-method status="PASS" signature="flushReportAndOpen()[pri:0, instance:com.dyt.ors.regression.AdminProducts@3ffc5af1]" name="flushReportAndOpen" is-config="true" duration-ms="13132" started-at="2020-07-10T14:06:54Z" finished-at="2020-07-10T14:07:07Z">
+        <test-method status="PASS" signature="flushReportAndOpen()[pri:0, instance:com.dyt.ors.regression.AdminProducts@3ffc5af1]" name="flushReportAndOpen" is-config="true" duration-ms="11987" started-at="2020-07-10T16:33:36Z" finished-at="2020-07-10T16:33:48Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- flushReportAndOpen -->

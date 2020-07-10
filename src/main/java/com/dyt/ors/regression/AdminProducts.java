@@ -99,8 +99,9 @@ public class AdminProducts extends BaseClass {
 		Home home = PageFactory.initElements(driver, Home.class);
 		Dashboard dashboard = PageFactory.initElements(driver, Dashboard.class);
 		//Subcategory AddSubCategories = PageFactory.initElements(driver, Subcategory.class);
-		EditSubCategory editsubcategory = PageFactory.initElements(driver, EditSubCategory.class);
+		//EditSubCategory editsubcategory = PageFactory.initElements(driver, EditSubCategory.class);
 		//VerifySubcategory verifysubcategorypage = PageFactory.initElements(driver, VerifySubcategory.class);
+		VerifyDeleteSubcategory selectDeleteicon = PageFactory.initElements(driver, VerifyDeleteSubcategory.class);
 		
 		//Step 1: Login as an admin
 		Home.navLoginpage();
@@ -113,8 +114,13 @@ public class AdminProducts extends BaseClass {
 		
 		
 		 //Subcategory.AddSubCategories("cold", "fever", "D");
-		EditSubCategory.selectEditicon(data[2]);
-		 EditSubCategory.editsubcategory(data[3], data[4], data[5]);
+		//EditSubCategory.selectEditicon(data[2]);
+		 //EditSubCategory.editsubcategory(data[3], data[4], data[5]);
+		VerifyDeleteSubcategory.selectDeleteicon(data[2]);
+		VerifyDeleteSubcategory.Alertanddismiss();
+		
+	
+		 
 		
 	}
 }
