@@ -16,7 +16,7 @@ import com.dyt.ors.screenpages.Subcategory;
 import com.dyt.utilities.ExcelLib;
 
 public class AdminProducts extends BaseClass {
-	/*
+	
 	@Test
 	public static void TC001_verifymainmenu() {
 		VerifyHomepage verifyhomepage= PageFactory.initElements(driver, VerifyHomepage.class);
@@ -24,8 +24,9 @@ public class AdminProducts extends BaseClass {
 		
 		
 	}
-	*/
-	/*
+	
+	//===============================================================
+	
 	@Test
 	public static void TC002_Verifylogin()
 	{		
@@ -41,6 +42,7 @@ public class AdminProducts extends BaseClass {
 		
 	}
 	
+	//===========================================================================
 	
 	@Test
 	public static void TC003_Login()
@@ -55,24 +57,21 @@ public class AdminProducts extends BaseClass {
 	}
 	
 	
-	}
+	//======================================================================
 
 	
 	
-	
-
 	@Test
-	public static void TC001_addMainCategory()
+	public static void TC004_addMainCategory()
 	{		
-		String[] data = ExcelLib.getRowData("TC001_addMainCategory", Regression_Sheet);
+		
+		String[] data = ExcelLib.getRowData("TC004_addMainCategory", Smoke_Sheet);
 		Login login = PageFactory.initElements(driver, Login.class);
 		Home home = PageFactory.initElements(driver, Home.class);
 		Dashboard dashboard = PageFactory.initElements(driver, Dashboard.class);
-		//MainCategories AddMainCategories=PageFactory.initElements(driver,MainCategories.class);
-		//Editmaincategories editmaincategory = PageFactory.initElements(driver,Editmaincategories.class);
-		 VerifyDeletemaincategory selectmaincategoryDeleteicon = PageFactory.initElements(driver,VerifyDeletemaincategory.class);
-		
-		
+		MainCategories maincategories = PageFactory.initElements(driver, MainCategories.class);
+		MainCategories addmaincategories=PageFactory.initElements(driver,MainCategories.class);
+		MainCategories verifymaincategories = PageFactory.initElements(driver, MainCategories.class);		
 		//Step 1: Login as an admin
 		
 		Home.navLoginpage();
@@ -83,121 +82,157 @@ public class AdminProducts extends BaseClass {
 		
 		 dashboard.navMainCategories();
 		
-		 //MainCategories.AddMainCategories("cold", "D","value");
-		 //Editmaincategories.selectmaincategoryEditicon(data[2]);
-		//Editmaincategories.editmaincategories(data[3],data[4],data[5]);
-		 VerifyDeletemaincategory.selectmaincategoryDeleteicon(data[3]);
-		 VerifyDeletemaincategory.Alertanddismiss();
-		 
+		maincategories.AddMainCategories(data[2],data[3],data[4]);
+		maincategories.VerifyMainCategories();
 		
-		
-		
-		// Step n : Logout		
 	}
-}
+//======================================================================================================		
+	@Test
+	public static void TC005_Editmaincategories()
+		{		
+			
+			String[] data = ExcelLib.getRowData("TC005_Editmaincategories", Smoke_Sheet);
+			Login login = PageFactory.initElements(driver, Login.class);
+			Home home = PageFactory.initElements(driver, Home.class);
+			Dashboard dashboard = PageFactory.initElements(driver, Dashboard.class);
+			MainCategories maincategories = PageFactory.initElements(driver, MainCategories.class);
+			Editmaincategories editmaincategories=PageFactory.initElements(driver,Editmaincategories.class);
+			
+			Home.navLoginpage();
+			
+			//Step 1: Login as an admin
+			
+			login.loginApp(data[0],data[1]);
+			
+			//Step 2: Navigate to Main Category page
+			
+			 dashboard.navMainCategories();
+			 
+			 Editmaincategories.editmaincategories(data[0],data[1],data[2]);
+		
 	
-	//=============================================
-	/*
+		}
+			
+	
+	//======================================================================================================	
+	
+	@Test
+	public static void TC006_Deletemaincategories()
+		{		
+			
+			String[] data = ExcelLib.getRowData("TC005_Editmaincategories", Smoke_Sheet);
+			Login login = PageFactory.initElements(driver, Login.class);
+			Home home = PageFactory.initElements(driver, Home.class);
+			Dashboard dashboard = PageFactory.initElements(driver, Dashboard.class);
+			MainCategories maincategories = PageFactory.initElements(driver, MainCategories.class);
+			VerifyDeletemaincategory selectmaincategoryDeleteicon=PageFactory.initElements(driver,VerifyDeletemaincategory.class);
+			
+			Home.navLoginpage();
+			
+			//Step 1: Login as an admin
+			
+			login.loginApp(data[0],data[1]);
+			
+			//Step 2: Navigate to Main Category page
+			
+			 dashboard.navMainCategories();
+			 
+			 VerifyDeletemaincategory.selectmaincategoryDeleteicon(data[2]);
+			 VerifyDeletemaincategory.Alertanddismiss();
+			 
+		
+	
+		}
+	//=============================================================================================		
+	
+	@Test
+	public static void TC006_AddSubCategory()
+		{		
+			
+			String[] data = ExcelLib.getRowData("TC006_AddSubCategory", Smoke_Sheet);
+			Login login = PageFactory.initElements(driver, Login.class);
+			Home home = PageFactory.initElements(driver, Home.class);
+			Dashboard dashboard = PageFactory.initElements(driver, Dashboard.class);
+			Subcategory AddSubCategories = PageFactory.initElements(driver, Subcategory.class);
+			
+			Home.navLoginpage();
+			
+			login.loginApp(data[0],data[1]);
+			
+			dashboard.navSubCategories();
+			
+			Subcategory.AddSubCategories(data[2],data[3],data[4]);
+			
+}
+//========================================================================================================
 
-	@Test
-	public static void TC004_addSubCategory()
-	{	
-		String[] data = ExcelLib.getRowData("TC004_addSubCategory", Regression_Sheet);
-		Login login = PageFactory.initElements(driver, Login.class);
-		Home home = PageFactory.initElements(driver, Home.class);
-		Dashboard dashboard = PageFactory.initElements(driver, Dashboard.class);
-		//Subcategory AddSubCategories = PageFactory.initElements(driver, Subcategory.class);
-		//EditSubCategory editsubcategory = PageFactory.initElements(driver, EditSubCategory.class);
-		//VerifySubcategory verifysubcategorypage = PageFactory.initElements(driver, VerifySubcategory.class);
-		VerifyDeleteSubcategory selectDeleteicon = PageFactory.initElements(driver, VerifyDeleteSubcategory.class);
-		
-		//Step 1: Login as an admin
-		Home.navLoginpage();
-		login.loginApp(data[0],data[1]);
-		
-		//Step 2: navigate to Subcategory page
-		
-		dashboard.navSubCategories();
-		//VerifySubcategory.verifysubcategorypage();
-		
-		
-		 //Subcategory.AddSubCategories("cold", "fever", "D");
-		//EditSubCategory.selectEditicon(data[2]);
-		 //EditSubCategory.editsubcategory(data[3], data[4], data[5]);
-		VerifyDeleteSubcategory.selectDeleteicon(data[2]);
-		VerifyDeleteSubcategory.Alertanddismiss();
-		
+     @Test
+   public static void TC007_EditSubCategory()
+    {		
 	
-		 
-		
-	}
+	String[] data = ExcelLib.getRowData("TC007_EditSubCategory", Smoke_Sheet);
+	Login login = PageFactory.initElements(driver, Login.class);
+	Home home = PageFactory.initElements(driver, Home.class);
+	Dashboard dashboard = PageFactory.initElements(driver, Dashboard.class);
+	Subcategory AddSubCategories = PageFactory.initElements(driver, Subcategory.class);
+	EditSubCategory editsubcategory = PageFactory.initElements(driver, EditSubCategory.class);
+	Home.navLoginpage();
+	
+	login.loginApp(data[0],data[1]);
+	
+	dashboard.navSubCategories();
+	
+	EditSubCategory.editsubcategory(data[2],data[3],data[4]);
+	
 }
-	//=============================================
-	  */
-	
-	
-	@Test
-	public static void TC003_addProduct()
-	{		
-		String[] data = ExcelLib.getRowData("TC003_addProduct", Regression_Sheet);
-		Login login = PageFactory.initElements(driver, Login.class);
-		Home home = PageFactory.initElements(driver, Home.class);
-		Dashboard dashboard = PageFactory.initElements(driver, Dashboard.class);
-		//AddProducts navAddProducts = PageFactory.initElements(driver, AddProducts.class);
-		//VerifyProducts VerifyaddProducts = PageFactory.initElements(driver, VerifyProducts.class);
-		VerifyDeleteProducts selectproductDeleteicon= PageFactory.initElements(driver, VerifyDeleteProducts.class);
-		//Step 1: Login as an admin
-		
-				Home.navLoginpage();
-				login.loginApp(data[0],data[1]);
-				
-				//Step 2: navigate to Product page
-				
-				dashboard.navProducts();
-				//VerifyProducts.VerifyaddProducts();
-				
-				VerifyDeleteProducts.selectproductDeleteicon(data[4]);
-				VerifyDeleteProducts.Alertanddismiss();
-				
-				// step 3 add products
-				
-				//AddProducts.addProducts("dolofar","tab-25" ,"1567", "pain relief", "22", "1000", "B", "pain killer", "1","4321", "100","5432","G", "ProductImage");
-				
-				
-		
-		
-		
-	}
-}
+     
+//===============================================================================================================
+     
+     @Test
+ 	public static void TC008_AddProducts()
+ 	{		
+    	String[] data = ExcelLib.getRowData("TC008_AddProducts", Smoke_Sheet);
+ 		Login login = PageFactory.initElements(driver, Login.class);
+ 		Home home = PageFactory.initElements(driver, Home.class);
+ 		Dashboard dashboard = PageFactory.initElements(driver, Dashboard.class);
+ 		AddProducts addProducts = PageFactory.initElements(driver, AddProducts.class);
+ 		
+ 		//Step 1: Login as an admin
+ 		
+ 				Home.navLoginpage();
+ 				login.loginApp(data[0],data[1]);
+ 				
+ 				//Step 2: navigate to Product page
+ 				
+ 				dashboard.navProducts();
+ 				
+ 				// step 3 add products
+ 				
+ 				AddProducts.addProducts(data[2],data[3],data[4],data[5],data[6],data[7],data[8],data[9],data[10],data[11],data[12],data[13],data[14],data[15]);
 
-	//=============================================
-	/*
-	@Test
-	public static void TC004_EditProductDetails()
-	{
-		
-		Login login = PageFactory.initElements(driver, Login.class);
-		Home home = PageFactory.initElements(driver, Home.class);
-		Dashboard dashboard = PageFactory.initElements(driver, Dashboard.class);
-		AddProducts navAddProducts = PageFactory.initElements(driver, AddProducts.class);
-		EditProducts editproduct = PageFactory.initElements(driver, EditProducts.class);
-		
-		//Step 1: Login as an admin
-		
-				Home.navLoginpage();
-				login.loginApp("admin","admin@123");
-				
-				//Step 2: navigate to Product page
-				
-				dashboard.navProducts();
-				
-				// step 3 edit  products
-		EditProducts.editproduct("Acetonicpoly", "sample","1457","tab-30", "56", "1000","D", "tablet", "6598", "50","10", "A12E", "D", "ProductImage");
-		
-	}
-	//=============================================
-	
-	
-	
+ 	}
+//===============================================================================================================================
+     
+     @Test
+ 	public static void TC009_EditProducts()
+ 	{
+    	String[] data = ExcelLib.getRowData("TC009_EditProducts", Smoke_Sheet);
+ 		Login login = PageFactory.initElements(driver, Login.class);
+ 		Home home = PageFactory.initElements(driver, Home.class);
+ 		Dashboard dashboard = PageFactory.initElements(driver, Dashboard.class);
+ 		EditProducts editproduct = PageFactory.initElements(driver, EditProducts.class);
+ 		
+ 		//Step 1: Login as an admin
+ 		
+ 				Home.navLoginpage();
+                login.loginApp(data[0],data[1]);
+ 				
+ 				//Step 2: navigate to Product page
+ 				
+ 				dashboard.navProducts();
+ 				
+ 				// step 3 edit products
+ 				
+ 				AddProducts.addProducts(data[2],data[3],data[4],data[5],data[6],data[7],data[8],data[9],data[10],data[11],data[12],data[13],data[14],data[15]);
 }
-*/
+}
