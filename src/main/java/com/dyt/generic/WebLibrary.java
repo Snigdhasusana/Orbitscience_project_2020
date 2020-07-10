@@ -7,6 +7,7 @@ import java.awt.event.KeyEvent;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
@@ -483,6 +484,25 @@ public class WebLibrary extends Config {
     	return stepStatus;
     }
 	
+	//===========================================================================
+	
+	public static boolean checkAlert_Accept(String string) {
+		
+	
+        try {
+        Alert a = driver.switchTo().alert();
+        String str = a.getText();
+        a.accept();
+        //a.dismiss();
+        return true;
+
+        } catch (Exception e) {
+
+        return false;
+      }
+
+	
 	//========================End WebLibrary========================================
 	
+}
 }

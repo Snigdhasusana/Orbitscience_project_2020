@@ -24,12 +24,12 @@ public class AdminProducts extends BaseClass {
 		
 		
 	}
-	
-	
+	*/
+	/*
 	@Test
 	public static void TC002_Verifylogin()
 	{		
-		
+		String[] data = ExcelLib.getRowData("TC002_Verifylogin", Regression_Sheet);
 		Home home = PageFactory.initElements(driver, Home.class);
 		
 		VerifyLoginpage verifyLoginpage = PageFactory.initElements(driver, VerifyLoginpage.class);
@@ -37,10 +37,10 @@ public class AdminProducts extends BaseClass {
 		
 		Home.navLoginpage();
 		
-		VerifyLoginpage.loginpage("admin","admin");
+		VerifyLoginpage.loginpage(data[0],data[1]);
 		
 	}
-	*/
+	
 	
 	@Test
 	public static void TC003_Login()
@@ -59,7 +59,7 @@ public class AdminProducts extends BaseClass {
 
 	
 	
-/*
+
 	@Test
 	public static void TC001_addMainCategory()
 	{		
@@ -87,32 +87,39 @@ public class AdminProducts extends BaseClass {
 		
 		// Step n : Logout		
 	}
+	*/
 	
 	//=============================================
 
 	@Test
-	public static void TC002_addSubCategory()
-	{		
+	public static void TC004_addSubCategory()
+	{	
+		String[] data = ExcelLib.getRowData("TC004_addSubCategory", Regression_Sheet);
 		Login login = PageFactory.initElements(driver, Login.class);
 		Home home = PageFactory.initElements(driver, Home.class);
 		Dashboard dashboard = PageFactory.initElements(driver, Dashboard.class);
-		Subcategory navAddSubCategories = PageFactory.initElements(driver, Subcategory.class);
+		//Subcategory AddSubCategories = PageFactory.initElements(driver, Subcategory.class);
 		EditSubCategory editsubcategory = PageFactory.initElements(driver, EditSubCategory.class);
+		//VerifySubcategory verifysubcategorypage = PageFactory.initElements(driver, VerifySubcategory.class);
 		
 		//Step 1: Login as an admin
 		Home.navLoginpage();
-		login.loginApp("admin","admin@123");
+		login.loginApp(data[0],data[1]);
 		
 		//Step 2: navigate to Subcategory page
 		
 		dashboard.navSubCategories();
-		//Subcategory.navAddSubCategories("cold", "fever", "D");
-		EditSubCategory.editsubcategory("main", "div-52", "B");
+		//VerifySubcategory.verifysubcategorypage();
+		
+		
+		 //Subcategory.AddSubCategories("cold", "fever", "D");
+		EditSubCategory.selectEditicon(data[2]);
+		 EditSubCategory.editsubcategory(data[3], data[4], data[5]);
 		
 	}
-	
+}
 	//=============================================
-	
+	/*
 	@Test
 	public static void TC003_addProduct()
 	{		
