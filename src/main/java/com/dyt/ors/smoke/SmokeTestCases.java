@@ -178,7 +178,7 @@ public class SmokeTestCases extends BaseClass{
      				
      				// step 3 add products
      				
-     				AddProducts.addProducts(data[2],data[3],data[4],data[5],data[6],data[7],data[8],data[9],data[10],data[11],data[12],data[13],data[14],data[15]);
+     				AddProducts.addProducts(data[2],data[3],data[4],data[5],data[6],data[7],data[8],data[9],data[10],data[11],data[12],data[13],data[14],data[15],data[16],data[17],data[18],data[19]);
 
      	}
    //===============================================================================================================================
@@ -203,7 +203,7 @@ public class SmokeTestCases extends BaseClass{
      				
      				// step 3 edit products
      				
-     				AddProducts.addProducts(data[2],data[3],data[4],data[5],data[6],data[7],data[8],data[9],data[10],data[11],data[12],data[13],data[14],data[15]);
+     				EditProducts.editproduct(data[4],data[5],data[6],data[7],data[8],data[9],data[10],data[11],data[12],data[13],data[14],data[15],data[16],data[17],data[18],data[19]);
 }
 }
 

@@ -53,6 +53,18 @@ public class EditProducts extends WebLibrary {
 	@FindBy(xpath="//input[@name='prdImage']")
 	public static WebElement ADD_ProductImage;
 	
+	@FindBy(xpath="//input[@id='prdSDS']")
+	public static WebElement edit_prdSDS;
+	
+	@FindBy(xpath="//input[@id='prdPSS']")
+	public static WebElement edit_prdPSS;
+	
+	@FindBy(xpath="//input[@id='ors_cao_lotNo']")
+	public static WebElement edit_caolotNo;
+	
+	@FindBy(xpath="//input[@id='coaPDF']")
+	public static WebElement edit_coaPDF;
+	
 	@FindBy(xpath="//input[@value='Submit']")
 	public static WebElement Submit_button;
 
@@ -85,7 +97,7 @@ public class EditProducts extends WebLibrary {
 	}
 	//===============================================================================
 	public static void  editproduct(String CatNo, String ProductDescription,String EnterMake, String Prize,String ProductGrade,
-            String Synonyms, String CasNo , String EnterPacSize, String Available,String HSCode , String Assignedorder , String ProductImage) {
+            String Synonyms, String CasNo , String EnterPacSize, String Available,String HSCode , String Assignedorder , String ProductImage, String SDS, String PDS, String lotnum,String lotpdf) {
 		boolean bStatus;
 		
 		 	
@@ -122,8 +134,21 @@ public class EditProducts extends WebLibrary {
 	bStatus = selectListItem(edit_Assignedorder, Assignedorder);
 	Reporter.log(bStatus, "Assignedorder Value Selected", "Assignedorder Value not Selected");
 	
-	//bStatus = uploadFile(Choose_Image,ADD_ProductImage, ProductImage);
-	//Reporter.log(bStatus, "ProductImage Uploaded", "ProductImage not Uploaded");
+	bStatus = fileUpload(ADD_ProductImage,ProductImage);
+	Reporter.log(bStatus, "ProductImage Uploaded", "ProductImage not Uploaded");
+	
+	bStatus = fileUpload(edit_prdSDS, SDS);
+	Reporter.log(bStatus, "SDS has  Uploaded", "SDS has not Uploaded");
+	
+	bStatus = fileUpload(edit_prdPSS, PDS);
+	Reporter.log(bStatus, "SDS has  Uploaded", "SDS has not Uploaded");
+	
+	bStatus = setEditValue(edit_caolotNo,lotnum );
+	Reporter.log(bStatus, "HSCode is entered", "HSCode is not entered");
+	
+	
+	bStatus = fileUpload(edit_coaPDF, lotpdf);
+	Reporter.log(bStatus, "lotno is   Uploaded", "lotno is  not Uploaded");
 		
 				
 	bStatus = clickElement(Submit_button);

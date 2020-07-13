@@ -361,7 +361,7 @@ public class AdminProducts extends BaseClass {
  				
  				// step 3 add products
  				
- 				AddProducts.addProducts(data[2],data[3],data[4],data[5],data[6],data[7],data[8],data[9],data[10],data[11],data[12],data[13],data[14],data[15]);
+ 				AddProducts.addProducts(data[2],data[3],data[4],data[5],data[6],data[7],data[8],data[9],data[10],data[11],data[12],data[13],data[14],data[15],data[16],data[17],data[18],data[19]);
  				AddProducts.VerifyProduct();
  	}
 //===============================================================================================================================
@@ -369,31 +369,27 @@ public class AdminProducts extends BaseClass {
      @Test
  	public static void TC0016_EditProducts()
  	{
-    	String[] data = ExcelLib.getRowData("TC0016_EditProducts", Regression_Sheet);
- 		Login login = PageFactory.initElements(driver, Login.class);
- 		Home home = PageFactory.initElements(driver, Home.class);
- 		Dashboard dashboard = PageFactory.initElements(driver, Dashboard.class);
- 		EditProducts selectproductEditicon = PageFactory.initElements(driver, EditProducts.class);
- 		EditProducts editproduct = PageFactory.initElements(driver, EditProducts.class);
- 		
- 		
- 		//Step 1: Login as an admin
- 		
- 				Home.navLoginpage();
-                login.loginApp(data[0],data[1]);
- 				
- 				//Step 2: navigate to Product page
- 				
- 				dashboard.navProducts();
- 				
- 				// step 3 edit products
- 				
- 				EditProducts.selectproductEditicon(data[4]);
- 				
- 				EditProducts.editproduct(data[4],data[5],data[6],data[7],data[8],data[9],data[10],data[11],data[12],data[13],data[14],data[15]);
- 				
- 				EditProducts.VerifyeditProduct();
- 	}
+    	 String[] data = ExcelLib.getRowData("TC0016_EditProducts", Regression_Sheet);
+  		Login login = PageFactory.initElements(driver, Login.class);
+  		Home home = PageFactory.initElements(driver, Home.class);
+  		Dashboard dashboard = PageFactory.initElements(driver, Dashboard.class);
+  		EditProducts editproduct = PageFactory.initElements(driver, EditProducts.class);
+  		
+  		//Step 1: Login as an admin
+  		
+  				Home.navLoginpage();
+                 login.loginApp(data[0],data[1]);
+  				
+  				//Step 2: navigate to Product page
+  				
+  				dashboard.navProducts();
+  				
+  				// step 3 edit products
+  				
+  				EditProducts.editproduct(data[4],data[5],data[6],data[7],data[8],data[9],data[10],data[11],data[12],data[13],data[14],data[15],data[16],data[17],data[18],data[19]);
+}
+
+
 
 
 //==================================================================================================================

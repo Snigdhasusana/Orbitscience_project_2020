@@ -59,15 +59,30 @@ import org.openqa.selenium.WebElement;
 				@FindBy(xpath="//input[@name='prdImage']")
 				public static WebElement ADD_ProductImage;
 				
-				@FindBy(xpath="//input[@value='Submit']")
-				public static WebElement Submit_button;
-
-			
+				@FindBy(xpath="//input[@id='prdImage']")
+				public static WebElement edit_prdImage;
+				
+				@FindBy(xpath="//input[@id='prdSDS']")
+				public static WebElement edit_prdSDS;
+				
+				@FindBy(xpath="//input[@id='prdPSS']")
+				public static WebElement edit_prdPSS;
+				
+				@FindBy(xpath="//input[@id='ors_cao_lotNo']")
+				public static WebElement edit_caolotNo;
+				
+				@FindBy(xpath="//input[@id='coaPDF']")
+				public static WebElement edit_coaPDF;
+				
+				@FindBy(xpath="//input[@class='btn btn-success']")
+				public static WebElement btn_submit;
+				
+							
 			
 			//=================Add Products methods=========================
 			
 			public static void addProducts(String MainCatergories,String  OrderValue, String CatNo, String ProductDescription,String EnterMake, String Prize,String ProductGrade,
-					                       String Synonyms, String CasNo , String EnterPacSize, String Available,String HSCode , String Assignedorder , String ProductImage) {
+					                       String Synonyms, String CasNo , String EnterPacSize, String Available,String HSCode , String Assignedorder , String ProductImage, String SDS, String PDS,String lotnum, String lotpdf) {
 					                       
 					                       
 				boolean bStatus;
@@ -117,9 +132,21 @@ import org.openqa.selenium.WebElement;
 				
 				//bStatus = fileUpload(WebElement element, String strvalue);
 				//Reporter.log(bStatus, "ProductImage Uploaded", "ProductImage not Uploaded");
-					
-							
-				bStatus = clickElement(Submit_button);
+				
+				bStatus = fileUpload(edit_prdSDS, SDS);
+				Reporter.log(bStatus, "SDS has  Uploaded", "SDS has not Uploaded");
+				
+				bStatus = fileUpload(edit_prdPSS, PDS);
+				Reporter.log(bStatus, "SDS has  Uploaded", "SDS has not Uploaded");
+				
+				bStatus = setEditValue(edit_caolotNo,lotnum );
+				Reporter.log(bStatus, "HSCode is entered", "HSCode is not entered");
+				
+				
+				bStatus = fileUpload(edit_coaPDF, lotpdf);
+				Reporter.log(bStatus, "lotno is   Uploaded", "lotno is  not Uploaded");
+																				
+				bStatus = clickElement(btn_submit);
 				Reporter.log(bStatus, "submit button clicked", "submit button not clicked");
 
 }
