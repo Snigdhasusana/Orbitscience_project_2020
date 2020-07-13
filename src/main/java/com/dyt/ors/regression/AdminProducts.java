@@ -423,15 +423,43 @@ public class AdminProducts extends BaseClass {
  	
 //==============================================================================================================
 
-  @Test
+          @Test
           public static void TC0018_verifyProductDetailPage() {
+        	  
 	      String[] data = ExcelLib.getRowData("TC0018_verifyProductDetailPage", Regression_Sheet);
+	      
 	      VerifyHomepage verifyhomepage= PageFactory.initElements(driver, VerifyHomepage.class);
+	      
 	      Searchproducts productlist =  PageFactory.initElements(driver, Searchproducts.class);
+	      
 	      VerifySearchproducts verifyproductname = PageFactory.initElements(driver, VerifySearchproducts.class);
+	      
+	      VerifyLot lotnumber = PageFactory.initElements(driver, VerifyLot.class);
+	      
 	      Searchproducts.productlist(data[0]);
+	      
 	      VerifySearchproducts.verifyproductname();
+	      
+	      VerifyLot.lotnumber(data[1]);
 	      
 	      
   }
+ //===============================================================================================================
+          @Test
+      	public static void TC0019_Logout()
+      	{	
+      		String[] data = ExcelLib.getRowData("TC0019_Logout", Regression_Sheet);
+      		Login login = PageFactory.initElements(driver, Login.class);
+      		Home home = PageFactory.initElements(driver, Home.class);
+      		VerifyLogout defaultview = PageFactory.initElements(driver, VerifyLogout.class);
+      		
+      		Home.navLoginpage();
+      		
+      		login.loginApp(data[0],data[1]);
+      		
+      		VerifyLogout.defaultview();
+      	}
+          
+          
+  
   }

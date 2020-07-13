@@ -2,39 +2,39 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="53333" started-at="2020-07-10T13:45:19Z" finished-at="2020-07-10T13:46:13Z">
+  <suite name="Default suite" duration-ms="27727" started-at="2020-07-13T06:48:33Z" finished-at="2020-07-13T06:49:00Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="53333" started-at="2020-07-10T13:45:19Z" finished-at="2020-07-10T13:46:13Z">
-      <class name="com.dyt.ors.regression.AdminProducts">
-        <test-method status="PASS" signature="setupReport()[pri:0, instance:com.dyt.ors.regression.AdminProducts@3ffc5af1]" name="setupReport" is-config="true" duration-ms="906" started-at="2020-07-10T19:15:18Z" finished-at="2020-07-10T19:15:19Z">
+    <test name="Default test" duration-ms="27727" started-at="2020-07-13T06:48:33Z" finished-at="2020-07-13T06:49:00Z">
+      <class name="com.dyt.ors.smoke.Verify">
+        <test-method status="PASS" signature="setupReport()[pri:0, instance:com.dyt.ors.smoke.Verify@3ffc5af1]" name="setupReport" is-config="true" duration-ms="410" started-at="2020-07-13T12:18:32Z" finished-at="2020-07-13T12:18:33Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setupReport -->
-        <test-method status="PASS" signature="launchBrowser(java.lang.reflect.Method)[pri:0, instance:com.dyt.ors.regression.AdminProducts@3ffc5af1]" name="launchBrowser" is-config="true" duration-ms="14151" started-at="2020-07-10T19:15:19Z" finished-at="2020-07-10T19:15:34Z">
+        <test-method status="PASS" signature="launchBrowser(java.lang.reflect.Method)[pri:0, instance:com.dyt.ors.smoke.Verify@3ffc5af1]" name="launchBrowser" is-config="true" duration-ms="11646" started-at="2020-07-13T12:18:33Z" finished-at="2020-07-13T12:18:44Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[public static void com.dyt.ors.regression.AdminProducts.TC003_addProduct()]]>
+                <![CDATA[public static void com.dyt.ors.smoke.Verify.TC0019_Logout()]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchBrowser -->
-        <test-method status="PASS" signature="TC003_addProduct()[pri:0, instance:com.dyt.ors.regression.AdminProducts@3ffc5af1]" name="TC003_addProduct" duration-ms="34775" started-at="2020-07-10T19:15:34Z" finished-at="2020-07-10T19:16:08Z">
+        <test-method status="PASS" signature="TC0019_Logout()[pri:0, instance:com.dyt.ors.smoke.Verify@3ffc5af1]" name="TC0019_Logout" duration-ms="15835" started-at="2020-07-13T12:18:44Z" finished-at="2020-07-13T12:19:00Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TC003_addProduct -->
-        <test-method status="PASS" signature="closeBrowser()[pri:0, instance:com.dyt.ors.regression.AdminProducts@3ffc5af1]" name="closeBrowser" is-config="true" duration-ms="4316" started-at="2020-07-10T19:16:08Z" finished-at="2020-07-10T19:16:13Z">
+        </test-method> <!-- TC0019_Logout -->
+        <test-method status="PASS" signature="closeBrowser()[pri:0, instance:com.dyt.ors.smoke.Verify@3ffc5af1]" name="closeBrowser" is-config="true" duration-ms="192" started-at="2020-07-13T12:19:00Z" finished-at="2020-07-13T12:19:00Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
-        <test-method status="PASS" signature="flushReportAndOpen()[pri:0, instance:com.dyt.ors.regression.AdminProducts@3ffc5af1]" name="flushReportAndOpen" is-config="true" duration-ms="15300" started-at="2020-07-10T19:16:13Z" finished-at="2020-07-10T19:16:28Z">
+        <test-method status="PASS" signature="flushReportAndOpen()[pri:0, instance:com.dyt.ors.smoke.Verify@3ffc5af1]" name="flushReportAndOpen" is-config="true" duration-ms="12048" started-at="2020-07-13T12:19:00Z" finished-at="2020-07-13T12:19:13Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- flushReportAndOpen -->
-      </class> <!-- com.dyt.ors.regression.AdminProducts -->
+      </class> <!-- com.dyt.ors.smoke.Verify -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
